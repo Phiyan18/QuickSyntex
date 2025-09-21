@@ -1,0 +1,308 @@
+{
+  "name": "quicksyntex",
+  "displayName": "quicksyntex",
+  "description": "Enhanced Python syntax assistance with highlighting, error detection, and snippets",
+  "version": "2.0.0",
+  "publisher": "quicksyntex",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/Phiyan18/quicksyntex.git"
+},
+
+"icon": "logo.jpg",
+
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+ "categories": [
+    "Programming Languages",
+    "Linters",
+    "Snippets",
+    "Formatters",
+    "Other"
+  ],
+ 
+   "activationEvents": [
+    "onLanguage:python"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "quicksyntex.checkSyntax",
+        "title": "Check Python Syntax",
+        "category": "QuickSyntex",
+        "icon": "$(search)"
+      },
+      {
+        "command": "quicksyntex.formatCode",
+        "title": "Format Python Code",
+        "category": "QuickSyntex",
+        "icon": "$(symbol-method)"
+      },
+      {
+        "command": "quicksyntex.generateReport",
+        "title": "Generate Comprehensive Error Report",
+        "category": "QuickSyntex",
+        "icon": "$(report)"
+      },
+      {
+        "command": "quicksyntex.applyAllFixes",
+        "title": "Apply All Quick Fixes",
+        "category": "QuickSyntex",
+        "icon": "$(lightbulb-autofix)"
+      },
+      {
+        "command": "quicksyntex.toggleRealTimeChecking",
+        "title": "Toggle Real-time Checking",
+        "category": "QuickSyntex",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "quicksyntex.exportSettings",
+        "title": "Export Settings",
+        "category": "QuickSyntex",
+        "icon": "$(export)"
+      },
+      {
+        "command": "quicksyntex.importSettings",
+        "title": "Import Settings",
+        "category": "QuickSyntex",
+        "icon": "$(import)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "quicksyntex.checkSyntax",
+        "key": "ctrl+shift+p",
+        "mac": "cmd+shift+p",
+        "when": "editorLangId == python"
+      },
+      {
+        "command": "quicksyntex.formatCode",
+        "key": "ctrl+shift+f",
+        "mac": "cmd+shift+f", 
+        "when": "editorLangId == python"
+      },
+      {
+        "command": "quicksyntex.generateReport",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r",
+        "when": "editorLangId == python"
+      },
+      {
+        "command": "quicksyntex.applyAllFixes",
+        "key": "ctrl+shift+a",
+        "mac": "cmd+shift+a",
+        "when": "editorLangId == python"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "quicksyntex.checkSyntax",
+          "when": "editorLangId == python",
+          "group": "quicksyntex@1"
+        },
+        {
+          "command": "quicksyntex.formatCode",
+          "when": "editorLangId == python",
+          "group": "quicksyntex@2"
+        },
+        {
+          "command": "quicksyntex.applyAllFixes",
+          "when": "editorLangId == python",
+          "group": "quicksyntex@3"
+        },
+        {
+          "command": "quicksyntex.generateReport",
+          "when": "editorLangId == python",
+          "group": "quicksyntex@4"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "quicksyntex.checkSyntax",
+          "when": "editorLangId == python"
+        },
+        {
+          "command": "quicksyntex.formatCode",
+          "when": "editorLangId == python"
+        },
+        {
+          "command": "quicksyntex.generateReport",
+          "when": "editorLangId == python"
+        },
+        {
+          "command": "quicksyntex.applyAllFixes",
+          "when": "editorLangId == python"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "QuickSyntex Enhanced",
+      "properties": {
+        "quicksyntex.enableRealTimeChecking": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable real-time syntax checking as you type"
+        },
+        "quicksyntex.highlightLevel": {
+          "type": "string",
+          "enum": [
+            "basic",
+            "enhanced",
+            "comprehensive"
+          ],
+          "default": "enhanced",
+          "description": "Set the level of syntax highlighting and error detection"
+        },
+        "quicksyntex.enablePerformanceChecks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable performance issue detection"
+        },
+        "quicksyntex.enableSecurityChecks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable security vulnerability detection"
+        },
+        "quicksyntex.enableBestPracticeChecks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable best practice violation detection"
+        },
+        "quicksyntex.enableComplexityAnalysis": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable code complexity analysis"
+        },
+        "quicksyntex.enableDocumentationChecks": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable documentation completeness checks"
+        },
+        "quicksyntex.enableTypeHintSuggestions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable type hint suggestions"
+        },
+        "quicksyntex.maxLineLength": {
+          "type": "number",
+          "default": 79,
+          "minimum": 50,
+          "maximum": 200,
+          "description": "Maximum line length for line-too-long warnings"
+        },
+        "quicksyntex.maxFunctionParameters": {
+          "type": "number",
+          "default": 5,
+          "minimum": 3,
+          "maximum": 10,
+          "description": "Maximum number of function parameters before warning"
+        },
+        "quicksyntex.maxComplexity": {
+          "type": "number",
+          "default": 10,
+          "minimum": 5,
+          "maximum": 20,
+          "description": "Maximum cyclomatic complexity before warning"
+        },
+        "quicksyntex.excludedErrorCodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "List of error codes to exclude from detection"
+        },
+        "quicksyntex.customRules": {
+          "type": "object",
+          "default": {},
+          "description": "Custom rules configuration"
+        },
+        "quicksyntex.enableAutoFix": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically apply safe quick fixes on save"
+        },
+        "quicksyntex.reportFormat": {
+          "type": "string",
+          "enum": [
+            "markdown",
+            "html",
+            "json"
+          ],
+          "default": "markdown",
+          "description": "Format for generated error reports"
+        },
+        "quicksyntex.enableStatusBarUpdates": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show error count in status bar"
+        },
+        "quicksyntex.enableHoverHelp": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable hover documentation for Python keywords"
+        },
+        "quicksyntex.enableEnhancedCompletions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable enhanced code completions and snippets"
+        },
+        "quicksyntex.enableSignatureHelp": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable signature help for function calls"
+        }
+      }
+    },
+    "snippets": [
+      {
+        "language": "python",
+        "path": "./snippets/python-enhanced.json"
+      }
+    ],
+    "languages": [
+      {
+        "id": "python",
+        "extensions": [
+          ".py",
+          ".pyw",
+          ".pyi"
+        ],
+        "aliases": [
+          "Python"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "build": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "@vscode/test-electron": "^2.2.0",
+    "vsce": "^2.15.0",
+    "typescript": "^4.9.4",
+    "@types/assert": "^1.5.11",
+    "@types/mocha": "^10.0.10",
+    "vscode": "^1.88.0"
+  },
+  "dependencies": {
+    
+    "assert": "^2.1.0"
+   
+
+   
+  }
+  
+}

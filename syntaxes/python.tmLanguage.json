@@ -1,0 +1,261 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Python Enhanced",
+  "scopeName": "source.python.enhanced",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#classes"
+    },
+    {
+      "include": "#decorators"
+    },
+    {
+      "include": "#builtin-functions"
+    },
+    {
+      "include": "#builtin-types"
+    },
+    {
+      "include": "#constants"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.python",
+          "match": "\\b(if|elif|else|for|while|break|continue|pass|return|yield|try|except|finally|raise|with|as|assert|del|global|nonlocal|lambda)\\b"
+        },
+        {
+          "name": "keyword.operator.logical.python",
+          "match": "\\b(and|or|not|in|is)\\b"
+        },
+        {
+          "name": "keyword.other.python",
+          "match": "\\b(def|class|import|from|async|await)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.triple.python",
+          "begin": "\"\"\"",
+          "end": "\"\"\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.python",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.triple.python",
+          "begin": "'''",
+          "end": "'''",
+          "patterns": [
+            {
+              "name": "constant.character.escape.python",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.double.python",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.python",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.python",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.python",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.interpolated.python",
+          "begin": "f\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "meta.embedded.python",
+              "begin": "\\{",
+              "end": "\\}",
+              "patterns": [
+                {
+                  "include": "$self"
+                }
+              ]
+            },
+            {
+              "name": "constant.character.escape.python",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.interpolated.python",
+          "begin": "f'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "meta.embedded.python",
+              "begin": "\\{",
+              "end": "\\}",
+              "patterns": [
+                {
+                  "include": "$self"
+                }
+              ]
+            },
+            {
+              "name": "constant.character.escape.python",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.python",
+          "begin": "#",
+          "end": "$"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.python",
+          "match": "\\b\\d+\\.\\d+([eE][+-]?\\d+)?\\b"
+        },
+        {
+          "name": "constant.numeric.integer.python",
+          "match": "\\b\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.hex.python",
+          "match": "\\b0[xX][0-9a-fA-F]+\\b"
+        },
+        {
+          "name": "constant.numeric.octal.python",
+          "match": "\\b0[oO][0-7]+\\b"
+        },
+        {
+          "name": "constant.numeric.binary.python",
+          "match": "\\b0[bB][01]+\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.python",
+          "match": "\\+|\\-|\\*|/|//|%|\\*\\*"
+        },
+        {
+          "name": "keyword.operator.assignment.python",
+          "match": "=|\\+=|\\-=|\\*=|/=|//=|%=|\\*\\*=|&=|\\|=|\\^=|>>=|<<="
+        },
+        {
+          "name": "keyword.operator.comparison.python",
+          "match": "==|!=|<|>|<=|>="
+        },
+        {
+          "name": "keyword.operator.bitwise.python",
+          "match": "&|\\||\\^|~|<<|>>"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.python",
+          "match": "(?<=def\\s)\\w+"
+        },
+        {
+          "name": "entity.name.function.python",
+          "match": "\\w+(?=\\s*\\()"
+        }
+      ]
+    },
+    "classes": {
+      "patterns": [
+        {
+          "name": "entity.name.type.class.python",
+          "match": "(?<=class\\s)\\w+"
+        }
+      ]
+    },
+    "decorators": {
+      "patterns": [
+        {
+          "name": "entity.name.function.decorator.python",
+          "match": "@\\w+"
+        }
+      ]
+    },
+    "builtin-functions": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.python",
+          "match": "\\b(abs|all|any|ascii|bin|bool|breakpoint|bytearray|bytes|callable|chr|classmethod|compile|complex|delattr|dict|dir|divmod|enumerate|eval|exec|filter|float|format|frozenset|getattr|globals|hasattr|hash|help|hex|id|input|int|isinstance|issubclass|iter|len|list|locals|map|max|memoryview|min|next|object|oct|open|ord|pow|print|property|range|repr|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|vars|zip|__import__)\\b"
+        }
+      ]
+    },
+    "builtin-types": {
+      "patterns": [
+        {
+          "name": "support.type.python",
+          "match": "\\b(int|float|complex|str|bytes|bytearray|list|tuple|range|dict|set|frozenset|bool|NoneType)\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.python",
+          "match": "\\b(True|False|None|NotImplemented|Ellipsis|__debug__)\\b"
+        },
+        {
+          "name": "variable.language.special.python",
+          "match": "\\b(self|cls)\\b"
+        },
+        {
+          "name": "variable.language.python",
+          "match": "\\b__\\w+__\\b"
+        }
+      ]
+    }
+  }
+}

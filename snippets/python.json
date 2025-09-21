@@ -1,0 +1,188 @@
+{
+  "Function Definition": {
+    "prefix": "def",
+    "body": [
+      "def ${1:function_name}(${2:parameters}):",
+      "    \"\"\"${3:Description}\"\"\"",
+      "    ${4:pass}",
+      "    return ${5:None}"
+    ],
+    "description": "Define a Python function with docstring"
+  },
+  "Class Definition": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName}:",
+      "    \"\"\"${2:Class description}\"\"\"",
+      "    ",
+      "    def __init__(self${3:, parameters}):",
+      "        \"\"\"${4:Constructor description}\"\"\"",
+      "        ${5:pass}"
+    ],
+    "description": "Define a Python class with constructor"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}:",
+      "    ${2:pass}"
+    ],
+    "description": "If statement"
+  },
+  "If-Else Statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition}:",
+      "    ${2:pass}",
+      "else:",
+      "    ${3:pass}"
+    ],
+    "description": "If-else statement"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for ${1:item} in ${2:iterable}:",
+      "    ${3:pass}"
+    ],
+    "description": "For loop"
+  },
+  "For Range Loop": {
+    "prefix": "forr",
+    "body": [
+      "for ${1:i} in range(${2:n}):",
+      "    ${3:pass}"
+    ],
+    "description": "For loop with range"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition}:",
+      "    ${2:pass}"
+    ],
+    "description": "While loop"
+  },
+  "Try-Except Block": {
+    "prefix": "try",
+    "body": [
+      "try:",
+      "    ${1:pass}",
+      "except ${2:Exception} as ${3:e}:",
+      "    ${4:pass}"
+    ],
+    "description": "Try-except block"
+  },
+  "Try-Except-Finally Block": {
+    "prefix": "tryf",
+    "body": [
+      "try:",
+      "    ${1:pass}",
+      "except ${2:Exception} as ${3:e}:",
+      "    ${4:pass}",
+      "finally:",
+      "    ${5:pass}"
+    ],
+    "description": "Try-except-finally block"
+  },
+  "With Statement": {
+    "prefix": "with",
+    "body": [
+      "with ${1:expression} as ${2:variable}:",
+      "    ${3:pass}"
+    ],
+    "description": "With statement (context manager)"
+  },
+  "List Comprehension": {
+    "prefix": "lc",
+    "body": [
+      "[${1:expression} for ${2:item} in ${3:iterable}${4: if ${5:condition}}]"
+    ],
+    "description": "List comprehension"
+  },
+  "Dictionary Comprehension": {
+    "prefix": "dc",
+    "body": [
+      "{${1:key}: ${2:value} for ${3:item} in ${4:iterable}${5: if ${6:condition}}}"
+    ],
+    "description": "Dictionary comprehension"
+  },
+  "Lambda Function": {
+    "prefix": "lambda",
+    "body": [
+      "lambda ${1:x}: ${2:expression}"
+    ],
+    "description": "Lambda function"
+  },
+  "Main Guard": {
+    "prefix": "main",
+    "body": [
+      "if __name__ == \"__main__\":",
+      "    ${1:main()}"
+    ],
+    "description": "Main execution guard"
+  },
+  "Import Statement": {
+    "prefix": "import",
+    "body": [
+      "import ${1:module}"
+    ],
+    "description": "Import module"
+  },
+  "From Import": {
+    "prefix": "from",
+    "body": [
+      "from ${1:module} import ${2:item}"
+    ],
+    "description": "Import from module"
+  },
+  "Print Statement": {
+    "prefix": "print",
+    "body": [
+      "print(${1:value})"
+    ],
+    "description": "Print statement"
+  },
+  "F-String": {
+    "prefix": "f",
+    "body": [
+      "f\"${1:string with {${2:variable}}}\""
+    ],
+    "description": "F-string formatting"
+  },
+  "Docstring": {
+    "prefix": "doc",
+    "body": [
+      "\"\"\"",
+      "${1:Description}",
+      "",
+      "Args:",
+      "    ${2:param}: ${3:Description}",
+      "",
+      "Returns:",
+      "    ${4:Description}",
+      "\"\"\""
+    ],
+    "description": "Function docstring template"
+  },
+  "Property Decorator": {
+    "prefix": "prop",
+    "body": [
+      "@property",
+      "def ${1:property_name}(self):",
+      "    \"\"\"${2:Property description}\"\"\"",
+      "    return self._${1:property_name}"
+    ],
+    "description": "Property decorator"
+  },
+  "Setter Decorator": {
+    "prefix": "setter",
+    "body": [
+      "@${1:property_name}.setter",
+      "def ${1:property_name}(self, value):",
+      "    \"\"\"${2:Setter description}\"\"\"",
+      "    self._${1:property_name} = value"
+    ],
+    "description": "Setter decorator"
+  }
+}
