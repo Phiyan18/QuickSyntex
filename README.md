@@ -1,5 +1,5 @@
 # Python Syntax Helper
-<img width="420" height="420" alt="ELEMENTS_PVT_LTD_LOGO" src="https://github.com/user-attachments/assets/963d2c14-0924-4ff8-a13b-b3ef3903109c" />
+<img width="150" height="150" alt="ELEMENTS_PVT_LTD_LOGO" src="https://github.com/user-attachments/assets/963d2c14-0924-4ff8-a13b-b3ef3903109c" />
 
 A powerful Visual Studio Code extension that enhances Python development with advanced syntax assistance, error detection, and intelligent code completion.
 
