@@ -5,29 +5,29 @@ A powerful Visual Studio Code extension that enhances Python development with ad
 
 ## Features
 
-### 🔍 Real-time Syntax Checking
+### Real-time Syntax Checking
 - Detects common Python syntax errors as you type
 - Highlights indentation issues (mixed tabs/spaces)
 - Identifies missing colons in control structures
 - Catches unmatched brackets, parentheses, and braces
 
-### ✨ Enhanced Code Completion
+### Enhanced Code Completion
 - Intelligent keyword suggestions
 - Common Python patterns and snippets
 - Context-aware completions
 - Built-in Python constructs
 
-### 🛠️ Code Formatting
+### Code Formatting
 - Automatic indentation correction
 - Consistent code style enforcement
 - Smart formatting for Python control structures
 
-### 📚 Syntax Help
+### Syntax Help
 - Hover over keywords for syntax reminders
 - Inline documentation for Python constructs
 - Quick reference for common patterns
 
-### 🎯 Code Snippets
+### Code Snippets
 - Comprehensive collection of Python snippets
 - Function and class templates with docstrings
 - Control flow structures (if/else, loops, try/except)
